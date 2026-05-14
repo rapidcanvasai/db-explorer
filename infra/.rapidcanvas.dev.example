@@ -1,0 +1,12 @@
+# RapidCanvas deploy config — dev target
+# Same format as .rapidcanvas.example. Point at a separate FastAPI app + DataApp
+# in your dev tenant (or the dev host) so you don't redeploy on top of prod.
+
+API_HOST=https://app.rapidcanvas.ai
+
+backendPath=app
+FASTAPI_ID=
+API_PREFIX=
+
+dashboardPath=dashboard
+DATAAPP_ID=

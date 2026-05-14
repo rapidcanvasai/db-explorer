@@ -1,0 +1,26 @@
+# Local setup
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.env
+
+# Env / secrets — real configs stay out of git. Committed templates: *.example
+.env
+app/.env
+app/.env.local
+app/.env.dev
+app/.env.prod
+infra/.rapidcanvas
+infra/.rapidcanvas.dev
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Deploy artifacts
+*.zip

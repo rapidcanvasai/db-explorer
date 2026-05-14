@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: db-explorer-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: localtest
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: connector
+      MYSQL_PASSWORD: localtest
+    ports:
+      - "3307:3306"
+    volumes:
+      - db-explorer-mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uconnector", "-plocaltest"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  db-explorer-mysql:

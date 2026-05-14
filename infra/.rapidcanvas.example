@@ -1,0 +1,18 @@
+# RapidCanvas deploy config — production target
+#
+# 1. Create a FastAPI app + DataApp in your RapidCanvas tenant.
+# 2. Copy this file to `.rapidcanvas` and fill in the IDs below.
+# 3. Run: RAPIDCANVAS_API_KEY=... ./infra/deploy-backend.sh prod
+#         RAPIDCANVAS_API_KEY=... ./infra/deploy-frontend.sh prod
+
+# RapidCanvas platform host (e.g. https://app.rapidcanvas.ai)
+API_HOST=https://app.rapidcanvas.ai
+
+# Backend (FastAPI app)
+backendPath=app
+FASTAPI_ID=
+API_PREFIX=
+
+# Frontend (DataApp)
+dashboardPath=dashboard
+DATAAPP_ID=
