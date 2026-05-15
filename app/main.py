@@ -68,14 +68,7 @@ APP_ENV = (os.getenv("APP_ENV") or "LOCAL").upper()
 
 # Feature flag — when on, the API exposes DELETE/DROP affordances. Always
 # require an explicit opt-in; the UI will still demand user confirmation.
-# PROD is hard-disabled: even if an env file ships with the flag on, the
-# production tenant must never accept destructive queries through this app.
-_DESTRUCTIVE_REQUESTED = _env_flag("DESTRUCTIVE_OPS_ENABLED", default=False)
-DESTRUCTIVE_OPS_ENABLED = _DESTRUCTIVE_REQUESTED and APP_ENV != "PROD"
-if _DESTRUCTIVE_REQUESTED and not DESTRUCTIVE_OPS_ENABLED:
-    logger.warning(
-        "DESTRUCTIVE_OPS_ENABLED was requested but APP_ENV=%s — forcing OFF.", APP_ENV
-    )
+DESTRUCTIVE_OPS_ENABLED = _env_flag("DESTRUCTIVE_OPS_ENABLED", default=False)
 
 # Lazy pool — created on app startup, not at import time
 _pool = None
